@@ -30,7 +30,7 @@ todos.shift();
 // 输出: 'Remaining: Make coffee, Take a nap'
 ```
 
-由于 ES5 中的原生数组的局限性，`observable.array` 会创建一个人造数组(类数组对象)来代替真正的数组。
+由于 ES5 中的原生数组的局限性，`observable.array` 会创建一个伪数组(类数组对象)来代替真正的数组。
 实际上，这些数组能像原生数组一样很好的工作，并且支持所有的原生方法，包括从索引的分配到包含数组长度。
 
 请记住无论如何 `Array.isArray(observable([]))` 都将返回 `false` ，所以无论何时当你需要传递 observable 数组到外部库时，通过使用 `array.slice()` **在 observable 数组传递给外部库或者内置方法前创建一份浅拷贝**(无论如何这都是最佳实践)总会是一个好主意。
@@ -49,8 +49,7 @@ todos.shift();
 * `remove(value)` - 通过值从数组中移除一个单个的项。如果项被找到并移除的话，返回 `true` 。
 * `peek()` - 和 `slice()` 类似， 返回一个有所有值的数组并且数组可以放心的传递给其它库。
 
-与 `slice` 相反，`peek` 不创建保护性拷贝。如果你确定是以只读方式使用数组，请在性能关键的应用中使用此方法。
-在性能关键的部分，还建议使用一个扁平的 `observable` 数组。
+与 `slice` 相对比，`peek` 不创建保护性拷贝。在性能关键的应用中使用此方法时，请确定你是以只读方式使用数组，并且建议使用一个扁平的 `observable` 数组。
 
 ## `observable.shallowArray(values)`
 
