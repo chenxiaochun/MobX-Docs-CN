@@ -145,7 +145,7 @@ colors.foreground = 'blue';
 
 ## `observer` 和 `PureComponent`
 
-如果传递给组件的数据是响应式的,`observer` 还可以防止当组件的 *props* 只是浅改变时的重新渲染，这是很有意义的。
+如果传递给组件的数据是响应式的，`observer` 还可以防止当组件的 *props* 只是浅改变时的重新渲染，这是很有意义的。
 这个行为与 [React PureComponent](https://reactjs.org/docs/react-api.html#reactpurecomponent) 相似，不同在于这里的 *state* 的更改仍然会被处理。
 如果一个组件提供了它自己的 `shouldComponentUpdate`，这个方法会被优先调用。
 想要更详细的解释，请参见这个 [github issue](https://github.com/mobxjs/mobx/issues/101)。
@@ -171,7 +171,7 @@ import {observer} from "mobx-react";
 
 * `componentWillReact` 不接收参数
 * `componentWillReact` 初始化渲染前不会触发 (使用 `componentWillMount` 替代)
-* `componentWillReact` 对于 mobx-react@4+, 当接收新的 props 时并在 `setState` 调用后会触发此钩子
+* `componentWillReact` 对于 mobx-react@4+，当接收新的 props 时并在 `setState` 调用后会触发此钩子
 
 ## 优化组件
 
